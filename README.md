@@ -2,6 +2,10 @@
 
 Este repositório contém um projeto de exemplo para criar um Gerenciador de Catálogos da Netflix usando **Azure Functions** e **Azure Cosmos DB**. Este projeto permite criar, buscar, atualizar e deletar itens de um catálogo, oferecendo uma API REST para gerenciamento.
 
+<p align="center">
+  <img src="URL_DA_IMAGEM" alt="Netflix"/>
+</p>
+
 ---
 
 ## Estrutura do Projeto
