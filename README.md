@@ -1,10 +1,7 @@
 # Gerenciador de Catálogos da Netflix com Azure Functions
 
-Este repositório contém um projeto de exemplo para criar um Gerenciador de Catálogos da Netflix usando **Azure Functions** e **Azure Cosmos DB**. Este projeto permite criar, buscar, atualizar e deletar itens de um catálogo, oferecendo uma API REST para gerenciamento.
-
-<p align="center">
-  <img src="https://github.com/devcaiada/netflix-catalog-manager/blob/main/assets/Netflix.png?raw=true" alt="Netflix"/>
-</p>
+Este repositório contém um projeto para criar um Gerenciador de Catálogos da filmes (estilo Netflix) usando **Azure Functions** e **Azure Cosmos DB**.
+**Funções**: criar, buscar, atualizar e deletar itens de um catálogo, usando API REST para gerenciamento.
 
 ---
 
@@ -34,7 +31,7 @@ netflix_catalog_manager/
 ## Requisitos
 
 - Conta no [Microsoft Azure](https://azure.microsoft.com/)
-- Python 3.9 ou superior
+- Python 3.8 ou superior
 - Azure Functions Core Tools
 - Azure CLI
 
@@ -80,20 +77,13 @@ netflix_catalog_manager/
 
 ### 2. Configuração do Projeto
 
-#### 2.1. Clonar o Repositório e Navegar para o Diretório
-
-```bash
-git clone https://github.com/devcaiada/netflix-catalog-manager.git
-cd netflix-catalog-manager
-```
-
-#### 2.2. Instalar as Dependências
+#### 2.1. Instalar as Dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 2.3. Configurar Variáveis de Ambiente no Azure
+#### 2.2. Configurar Variáveis de Ambiente no Azure
 
 1. **Adicione as variáveis de ambiente no Azure Function App:**
    ```bash
@@ -101,7 +91,6 @@ pip install -r requirements.txt
        --resource-group netflixCatalogGroup \
        --settings COSMOS_ENDPOINT=<COSMOS_DB_ENDPOINT> COSMOS_KEY=<COSMOS_DB_KEY>
    ```
-
 ---
 
 ### 3. Desenvolvimento das Funções
@@ -112,7 +101,6 @@ As funções estão organizadas em pastas, cada uma com um arquivo `__init__.py`
 - **`GetCatalog`:** Permite buscar todos os itens.
 - **`UpdateCatalog`:** Permite atualizar itens existentes.
 - **`DeleteCatalog`:** Permite deletar itens por ID.
-
 ---
 
 ### 4. Deploy para o Azure
@@ -130,19 +118,14 @@ As funções estão organizadas em pastas, cada uma com um arquivo `__init__.py`
    - **Buscar:** `GET /api/GetCatalog`
    - **Atualizar:** `PUT /api/UpdateCatalog`
    - **Deletar:** `DELETE /api/DeleteCatalog`
-
 ---
 
 ## Exemplos de Uso
-
 ### Criar um Novo Item
-
 **Requisição:**
-
 ```http
 POST /api/CreateCatalog HTTP/1.1
 Content-Type: application/json
-
 {
     "id": "1",
     "title": "Stranger Things",
@@ -152,7 +135,6 @@ Content-Type: application/json
 ```
 
 **Resposta:**
-
 ```json
 {
   "message": "Catalog item created successfully!"
@@ -160,15 +142,12 @@ Content-Type: application/json
 ```
 
 ### Buscar Itens
-
 **Requisição:**
-
 ```http
 GET /api/GetCatalog HTTP/1.1
 ```
 
 **Resposta:**
-
 ```json
 [
   {
@@ -181,13 +160,10 @@ GET /api/GetCatalog HTTP/1.1
 ```
 
 ### Atualizar um Item
-
 **Requisição:**
-
 ```http
 PUT /api/UpdateCatalog HTTP/1.1
 Content-Type: application/json
-
 {
     "id": "1",
     "title": "Stranger Things",
@@ -197,7 +173,6 @@ Content-Type: application/json
 ```
 
 **Resposta:**
-
 ```json
 {
   "message": "Catalog item updated successfully!"
@@ -205,7 +180,6 @@ Content-Type: application/json
 ```
 
 ### Deletar um Item
-
 **Requisição:**
 
 ```http
@@ -213,14 +187,11 @@ DELETE /api/DeleteCatalog?id=1&partition_key=1 HTTP/1.1
 ```
 
 **Resposta:**
-
 ```json
 {
   "message": "Catalog item deleted successfully!"
 }
 ```
-
----
 
 ## Tecnologias Utilizadas
 
@@ -228,19 +199,8 @@ DELETE /api/DeleteCatalog?id=1&partition_key=1 HTTP/1.1
 - **Azure Cosmos DB**: Banco de dados NoSQL para armazenamento do catálogo.
 - **Python**: Linguagem de programação usada no desenvolvimento das funções.
 - **Azure CLI**: Ferramenta de linha de comando para gerenciar recursos do Azure.
-
 ---
 
-## Contribuições <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" />
+## Contribuição <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" />
 
-Contribuições são bem-vindas! Siga as instruções abaixo:
-
-1. Faça um fork deste repositório.
-2. Crie uma branch para sua feature: `git checkout -b minha-feature`.
-3. Faça o commit das alterações: `git commit -m 'Minha nova feature'`.
-4. Envie para o repositório remoto: `git push origin minha-feature`.
-5. Abra um Pull Request.
-
----
-
-Desenvolvido por [Caio Arruda](https://github.com/devcaiada).
+Sinta-se à vontade para contribuir com melhorias neste projeto. Envie um pull request ou abra uma issue para discussão.
